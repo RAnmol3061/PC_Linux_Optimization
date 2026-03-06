@@ -1,5 +1,11 @@
 # PC_Linux_Optimization
 
+These are the tweaks I made to my system to increase battery life of my laptop
+
+Laptop Specifications: HP Victus 15-fb3162AX
+CPU: Ryzen 7 7445HS APU
+GPU: RTX 4050 6GB (50W TDP)
+
 
 to install auto-cpufreq, 
 first clone the official auto-cpufreq repository
