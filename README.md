@@ -6,6 +6,10 @@ Laptop Specifications: HP Victus 15-fb3162AX
 CPU: Ryzen 7 7445HS APU
 GPU: RTX 4050 6GB (50W TDP)
 
+OS Specification
+
+Ubuntu 25.04
+
 
 to install auto-cpufreq, 
 first clone the official auto-cpufreq repository
@@ -21,3 +25,6 @@ press "i" when asked to install the auto-cpufreq daemon(service) to work in back
 to check if it working
 
 auto-cpufreq --monitor
+
+
+
