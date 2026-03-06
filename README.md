@@ -27,4 +27,24 @@ to check if it working
 auto-cpufreq --monitor
 
 
+## GPU Optimizations
+
+First ensure you have correct NVIDIA Drivers installed (proprietary drivers from NVIDIA is recommend, as of writing(2026) they work the best compared to noveau driver)
+
+After driver is installed, run
+
+sudo prime-select on-demand
+
+After executing the command reboot the system, then run 
+
+nvidia-smi
+
+if it shows no process running, then you are done
+
+But for me the fun part starts from here, I was facing a problem were the gpu was running a process called Xorg, which was only using 4mb of vram, even though my display was being rendered by
+my integrated graphics(Radeon)
+
+
+
+
 
