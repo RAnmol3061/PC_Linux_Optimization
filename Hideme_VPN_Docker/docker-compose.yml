@@ -1,0 +1,21 @@
+services:
+  vpn-gateway:
+    build: .
+    container_name: vpn-gateway
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - "8080:8080"
+      - "6881:6881"
+      - "6881:6881/udp"
+    environment:
+      - VPN_USER=${VPN_USER}
+      - VPN_PASS=${VPN_PASS}
+      - VPN_LOCAL_RANGE=${VPN_LOCAL_RANGE}
+    volumes:
+      - ./data:/vpn
+    stdin_open: true # Equivalent to -i
+    tty: true        # Equivalent to -t
+    restart: "no"
