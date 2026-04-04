@@ -1,14 +1,15 @@
-# PC_Linux_Optimization
+# Battery Optimizations 
 
-These are the tweaks I made to my system to increase battery life of my laptop
+These are the tweaks I made to my system to increase battery life of my laptop.
 
-Laptop Specifications: HP Victus 15-fb3162AX
-CPU: Ryzen 7 7445HS APU
-GPU: RTX 4050 6GB (50W TDP)
+## Laptop Specifications: 
+- Model No: HP Victus 15-fb3162AX
+- CPU: Ryzen 7 7445HS APU
+- GPU: RTX 4050 6GB (50W TDP)
+- Operating System: Xubuntu 25.04 and 25.10
 
-OS Specification
+---------------
 
-Xubuntu 25.04
 
 
 to install auto-cpufreq, 
@@ -100,12 +101,3 @@ for peace of mind, run
 cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status
 
 it the output says "suspended" then it is working
-
-
-
-
-
-
-
-
-
