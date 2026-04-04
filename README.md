@@ -14,21 +14,26 @@ These are the tweaks I made to my system to increase battery life of my laptop.
 
 Clone official github repository of auto-cpufreq
 
-``` git clone https://github.com/AdnanHodzic/auto-cpufreq.git```
-
+```bash
+ git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+```
 Change directory into auto-cpufreq
 
-``` cd auto-cpufreq```
+``` bash
+cd auto-cpufreq
 
-``` sudo ./auto-cpufreq-installer```
+sudo ./auto-cpufreq-installer
+```
 
 Proceed as guided by the installer
 
 To check if it is working
 
-```auto-cpufreq --status```
+```bash
+auto-cpufreq --status
+```
 
-To get most up to date information about auto-cpufreq please visit their official github repository. They have extremely detailed documentation on how to install and use auto-cpufreq. So if you have any questions regarding installation, how this software helps increase battery or how it works under the hood visit their repository
+To get most up to date information about **auto-cpufreq** please visit their *official github* repository. They have extremely detailed documentation on how to install and use auto-cpufreq. So if you have any questions regarding installation, how this software helps increase battery or how it works under the hood please visit their repository.
 
 
 ## GPU Optimizations
