@@ -82,3 +82,7 @@ If you want to know more about why this works, read up on **Xorg Documentation**
 
 
 **Disclaimer: This setting could mess up with external monitor setups, so please move ahead with caution**
+
+## Disclaimer
+
+Please note that these optimizations are what worked for my specific hardware and software configuration; they may not yield the same results for every system. This guide is provided "as is," and I will not be offering any further updates, fixes, or technical support. Please proceed with caution.
