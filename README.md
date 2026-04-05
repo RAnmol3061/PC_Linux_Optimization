@@ -36,24 +36,30 @@ auto-cpufreq --status
 To get most up to date information about **auto-cpufreq** please visit their *official github* repository. They have extremely detailed documentation on how to install and use auto-cpufreq. So if you have any questions regarding installation, how this software helps increase battery or how it works under the hood please visit their repository.
 
 
-## GPU Optimizations
+### GPU Optimizations
 
-First ensure you have correct NVIDIA Drivers installed (proprietary drivers from NVIDIA is recommend, as of writing(2026) they work the best compared to noveau driver)
+Ensure you have correct and latest NVIDIA Drivers installed (proprietary drivers from NVIDIA is recommend, as of writing (2026) they work the best compared to noveau driver)
 
-After driver is installed, run
 
+```bash
 sudo prime-select on-demand
+```
 
 After executing the command reboot the system, then run 
 
+```bash
 nvidia-smi
+```
 
-if it shows no process running, then you are done
+If the output shows no process are running when idle. Then you are done.
+
+---
+
 
 But for me the fun part starts from here, I was facing a problem were the gpu was running a process called Xorg, which was only using 4mb of vram, even though my display was being rendered by
 my integrated graphics(Radeon)
 
-it was 0000:01:00.0 for me, check your id from nvidia-smi command
+it was 0000:01:00.0 for me, check your id from nvidia-smi command   
 
 cat /proc/driver/nvidia/gpus/0000:01:00.0/power 
 
