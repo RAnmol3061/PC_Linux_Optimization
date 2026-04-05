@@ -55,63 +55,30 @@ If the output shows no process are running when idle. Then you are done.
 
 ---
 
+#### OS Specific Program
 
-But for me the fun part starts from here, I was facing a problem were the gpu was running a process called Xorg, which was only using 4mb of vram, even though my display was being rendered by
-my integrated graphics(Radeon)
+If you are also using Xubuntu, you would observe that there is a process called `Xorg` in the output of `nvidia-smi`, which is keeping the Nvidia GPU awake
 
-it was 0000:01:00.0 for me, check your id from nvidia-smi command   
+Create a file called 99-disable-nvidia.conf in the directory /usr/share/X11/xorg.conf.d/
 
-cat /proc/driver/nvidia/gpus/0000:01:00.0/power 
-
-
-
-To check power draw, in my current configration after all the optimization and at lowest brightness, I am discharing 6W	
-upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|to\ full|percentage|energy-rate"
-
-to fix the xorg issue, I downloaded envycontrol
-
-Download the latest .deb file from their official github
-https://github.com/bayasdev/envycontrol
-
-and install using
-
-sudo apt install ./(file name)      please make sure that the .deb file is legitimate, before using superuser privilege(sudo) to install the file
-
-
-This command tells the pc to use integrated graphics for light tasks and use nvidia for heavy tasks or if you specifically offload the task to them
-sudo envycontrol -s hybrid --rtd3
-
-
-After running the command reboot the pc
-run nvidia-smi
-
-if xorg process is stilling running then do this changes below( as these changes didn't help me too)
-
-
-create a file called 99-disable-nvidia.conf
-
-run 
-cd cd /usr/share/X11/xorg.conf.d/
+```bash
+cd /usr/share/X11/xorg.conf.d/
 sudo nano 99-disable-nvidia.conf
+```
 
-inside the file write:
-
+```xorg
 Section "ServerFlags"
     Option "AutoAddGPU" "off"
 EndSection
+```
 
 Press Ctrl+O then Ctrl+X
 
+Reboot your computer
 
-Reboot the pc
+Now run `nvidia-smi` again, the `Xorg` process should be gone now.
 
-Now run 
-cat /sys/bus/pci/devices/0000:01:00.0/power_state 
+If you want to know more about why this works, read up on **Xorg Documentation**
 
-if it says D3Cold, you are golden
 
-for peace of mind, run
-
-cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status
-
-it the output says "suspended" then it is working
+**Disclaimer: This setting could mess up with external monitor setups, so please move ahead with caution**
